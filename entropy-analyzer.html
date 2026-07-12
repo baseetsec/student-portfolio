@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Entropy Analyzer | Saheed Baseet Boluwatife</title>
+  <meta name="description" content="A live, working password entropy calculator and breach-pattern detector — a real demo of one of Saheed Baseet Boluwatife's security projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <p class="eyebrow">Live Demo &middot; <a href="projects.html" style="color: var(--accent-text); text-decoration: underline;">Back to Projects</a></p>
+      <h1>Password Entropy &amp; Breach-Pattern Analyzer</h1>
+      <p style="margin-top: 12px; max-width: 65ch;">
+        Type a password below nothing is sent anywhere, everything runs live in your
+        browser. The tool estimates real entropy (bits of randomness) and flags the
+        specific weaknesses attackers actually look for first.
+      </p>
+    </section>
+
+    <!-- ============ ANALYZER ============ -->
+    <section class="container reveal">
+      <div class="console-panel">
+        <div class="console-panel-header">
+          <span class="console-dot console-dot-red"></span>
+          <span class="console-dot console-dot-yellow"></span>
+          <span class="console-dot console-dot-green"></span>
+          <span class="console-title">entropy_analyzer.py</span>
+        </div>
+
+        <div class="analyzer-body">
+          <div class="form-field">
+            <label for="password-input">Test a password</label>
+            <div class="password-input-row">
+              <input
+                type="password"
+                id="password-input"
+                data-password-input
+                placeholder="Type here — nothing is saved or sent"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="button" class="btn btn-outline" data-toggle-visibility aria-pressed="false">Show</button>
+            </div>
+          </div>
+
+          <!-- Entropy readout -->
+          <div class="entropy-readout">
+            <div class="entropy-readout-header">
+              <span class="progress-label">Estimated Entropy: <span data-entropy-value>0</span> bits</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill entropy-fill" data-entropy-bar></div>
+            </div>
+            <p class="entropy-rating" data-entropy-rating>No input yet</p>
+          </div>
+
+          <!-- Findings -->
+          <div class="findings-panel">
+            <h3 style="margin-bottom: 16px;">Detected Weaknesses</h3>
+            <p class="empty-state" data-findings-empty style="text-align: left; padding: 0;">
+              No weaknesses detected yet start typing above.
+            </p>
+            <ul class="findings-list" data-findings-list></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">How This Works</p>
+      <h2>The reasoning behind the tool</h2>
+      <p style="max-width: 65ch;">
+        Entropy is estimated using a standard formula: password length multiplied by
+        log&#8322; of the character pool size actually used (lowercase, uppercase, digits,
+        symbols). A longer password built from a wider pool of character types has more
+        possible combinations, which is what makes brute-forcing it harder. Pattern
+        detection runs separately, checking for keyboard walks (like "qwerty"), sequential
+        digits, repeated characters, leetspeak substitutions, and matches against a small
+        list of known common passwords because a password can have technically high
+        entropy and still be guessed instantly if it follows a predictable pattern.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+  <script src="js/entropy.js"></script>
+</body>
+</html>
