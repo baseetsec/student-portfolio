@@ -626,7 +626,120 @@ section {
     flex-direction: column;
   }
 }
+/* ---------- OWASP scanner page ---------- */
+.scan-status {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--unit) * 2);
+  padding: calc(var(--unit) * 3);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent-text);
+}
 
+.scan-status-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--border-hover);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.scan-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: calc(var(--unit) * 2);
+  margin-bottom: calc(var(--unit) * 4);
+  padding-bottom: calc(var(--unit) * 3);
+  border-bottom: 1px solid var(--border);
+}
+
+.scan-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 0.5);
+  text-align: center;
+  background: var(--bg-elevated-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: calc(var(--unit) * 2);
+}
+
+.scan-summary-value {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+.severity-text-critical { color: var(--severity-critical); }
+.severity-text-high { color: var(--severity-high); }
+.severity-text-medium { color: var(--severity-medium); }
+
+.scan-summary-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.scan-findings-list {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--unit) * 2.5);
+}
+
+.scan-finding-row {
+  padding: calc(var(--unit) * 2.5);
+  background: var(--bg-elevated-hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.scan-finding-header {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--unit) * 1.5);
+  margin-bottom: calc(var(--unit) * 1.5);
+  flex-wrap: wrap;
+}
+
+.scan-finding-category {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-text);
+}
+
+.scan-finding-title {
+  font-size: 1rem;
+  margin-bottom: calc(var(--unit) * 1);
+}
+
+.scan-finding-detail {
+  font-size: 0.9rem;
+  margin-bottom: calc(var(--unit) * 1.5);
+}
+
+.scan-finding-remediation {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+  border-left: 2px solid var(--accent);
+  padding: calc(var(--unit) * 1.25) calc(var(--unit) * 1.5);
+  border-radius: 0 4px 4px 0;
+}
+
+.scan-finding-remediation strong {
+  color: var(--accent-text);
+}
 /* ---------- Contact page ---------- */
 .contact-grid {
   display: grid;

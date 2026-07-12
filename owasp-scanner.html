@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OWASP Top 10 Scanner Dashboard | Saheed Baseet Boluwatife</title>
+  <meta name="description" content="A live, working simulated OWASP Top 10 vulnerability scanner dashboard — a real demo of one of Saheed Baseet Boluwatife's security projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <p class="eyebrow">Live Demo &middot; <a href="projects.html" style="color: var(--accent-text); text-decoration: underline;">Back to Projects</a></p>
+      <h1>OWASP Top 10 Scanner Dashboard</h1>
+      <p style="margin-top: 12px; max-width: 65ch;">
+        Enter any URL below and run a simulated scan. This is an honest simulation of the shape of a real vulnerability scan, but no real requests are sent to the target site. The findings report is generated deterministically from the text you enter, so the same input always produces the same results.
+        no real request is ever sent to the site you type in. Findings are generated
+        from a fixed pool mapped to the real OWASP Top 10 categories, and the same URL
+        will always produce the same report.
+      </p>
+    </section>
+
+    <!-- ============ SCANNER ============ -->
+    <section class="container reveal">
+      <div class="console-panel">
+        <div class="console-panel-header">
+          <span class="console-dot console-dot-red"></span>
+          <span class="console-dot console-dot-yellow"></span>
+          <span class="console-dot console-dot-green"></span>
+          <span class="console-title">owasp_scanner.py</span>
+        </div>
+
+        <div class="analyzer-body">
+          <form class="password-input-row" data-scan-form>
+            <label for="scan-input" class="sr-only">Target URL</label>
+            <input
+              type="text"
+              id="scan-input"
+              data-scan-input
+              placeholder="e.g. myapp.example.com"
+              autocomplete="off"
+              spellcheck="false"
+              required
+            />
+            <button type="submit" class="btn btn-primary" data-scan-button>Run Scan</button>
+          </form>
+
+          <!-- Scan in progress -->
+          <div class="scan-status" data-scan-status hidden>
+            <div class="scan-status-spinner" aria-hidden="true"></div>
+            <span data-scan-status-text>Resolving target host…</span>
+          </div>
+
+          <!-- Report -->
+          <div class="scan-report" data-scan-report hidden>
+            <div class="scan-summary" data-scan-summary></div>
+
+            <div class="findings-panel">
+              <h3 style="margin-bottom: 16px;">Findings</h3>
+              <p class="empty-state" data-scan-empty style="text-align: left; padding: 0;" hidden>
+                No findings to display.
+              </p>
+              <ul class="scan-findings-list" data-scan-findings></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">How This Works</p>
+      <h2>The reasoning behind the tool</h2>
+      <p style="max-width: 65ch;">
+        This dashboard simulates the shape of a real vulnerability scan: a target is
+        entered, a scan sequence runs, and a findings report is produced mapping issues
+        to real OWASP Top 10 categories with severity ratings and remediation guidance.
+        Rather than random results, the report is generated deterministically from the
+        text you enter the same input always produces the same findings, the way a
+        real scanner would behave consistently against the same target. Building an
+        actual scanner that sends live requests to arbitrary sites is well outside the
+        scope of a safe, honest student project, so this focuses on what matters for
+        learning: correctly identifying and explaining real security categories.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+  <script src="js/owasp-scanner.js"></script>
+</body>
+</html>
