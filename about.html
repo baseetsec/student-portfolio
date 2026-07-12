@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Saheed Baseet Boluwatife</title>
+  <meta name="description" content="Educational background, career goals, technical skills, and interests of Saheed Baseet Boluwatife." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" aria-current="page">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <p class="eyebrow">About</p>
+      <h1>Who I am, and where I'm headed</h1>
+    </section>
+
+    <!-- ============ BIO ============ -->
+    <section class="container reveal">
+      <p style="font-size: 1.1rem; max-width: 70ch;">
+        I'm a first-year Cybersecurity student at MIVA Open University, working toward becoming
+        an ethical hacker and penetration tester who helps organizations catch vulnerabilities
+        before attackers do. I'm building my foundation in network security, web application
+        security, and secure system administration through hands-on practice CTF challenges,
+        personal projects, and coursework with industry certifications as the next step.
+      </p>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">Education</p>
+      <h2>Academic background</h2>
+      <div class="card" style="max-width: 560px;">
+        <h3>B.Sc. Cybersecurity — First Year</h3>
+        <p>MIVA Open University</p>
+        <p style="margin-top: 8px; font-size: 0.9rem; color: var(--text-tertiary);">
+          Coursework this term includes COS 106 Introduction to Web Technologies, alongside
+          foundational courses in networking and computing.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">Technical Skills</p>
+      <h2>Tools I've actually used</h2>
+      <p style="margin-bottom: 24px;">
+        Status reflects real comfort level, not aspiration — a first-year toolkit should look
+        like one.
+      </p>
+      <div class="skills-grid">
+        <span class="status-chip"><span class="light light-active"></span>Kali Linux</span>
+        <span class="status-chip"><span class="light light-active"></span>Wireshark</span>
+        <span class="status-chip"><span class="light light-active"></span>Burp Suite</span>
+        <span class="status-chip"><span class="light light-active"></span>Python</span>
+        <span class="status-chip"><span class="light light-active"></span>HTML / CSS</span>
+        <span class="status-chip"><span class="light light-learning"></span>JavaScript</span>
+        <span class="status-chip"><span class="light light-learning"></span>Networking Fundamentals</span>
+      </div>
+      <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-tertiary);">
+        <span class="light light-active" style="display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle;"></span>Active &nbsp;&nbsp;
+        <span class="light light-learning" style="display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:6px; vertical-align:middle;"></span>Currently learning
+      </p>
+    </section>
+
+    <!-- ============ HOBBIES ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">Off the Clock</p>
+      <h2>Outside the terminal</h2>
+      <p style="font-size: 1.05rem; max-width: 65ch;">
+        Most of my free time still ends up cybersecurity-adjacent working through CTF
+        challenges, poking around Linux internals, and reading breach write-ups and industry
+        news to see how real incidents actually unfold. When I do step away from a screen,
+        I'm usually deep into a Kodak Black playlist.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

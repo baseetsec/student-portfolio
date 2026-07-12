@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saheed Baseet Boluwatife | Securing Systems. Solving Problems.</title>
+  <meta name="description" content="Personal academic portfolio of Saheed Baseet Boluwatife, first-year Cybersecurity student at MIVA Open University." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero container">
+      <div class="hero-text">
+        <p class="eyebrow">First-Year &middot; Cybersecurity &middot; MIVA Open University</p>
+        <h1 class="hero-name">Saheed Baseet<br />Boluwatife</h1>
+        <p class="hero-tagline" data-typing aria-live="polite"></p>
+        <p class="hero-bio">
+          I'm building the foundation to become an ethical hacker and penetration tester,
+          someone organizations trust to find the gap before an attacker does. Right now
+          that means Kali Linux, Wireshark, Burp Suite, and a growing list of CTF write-ups.
+        </p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">View Projects</a>
+          <a href="about.html" class="btn btn-outline">About Me</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-frame">
+        <img src="assets/img/profile.jpg" alt="Portrait photo of Saheed Baseet Boluwatife" />
+        <span class="photo-tag"><span class="dot"></span>Status: Online</span>
+      </div>
+    </section>
+
+    <!-- ============ STATS STRIP ============ -->
+    <section class="container reveal stats-strip">
+      <div class="stat-item">
+        <span class="stat-number">1st Year</span>
+        <span class="stat-label">Cybersecurity Student</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5+</span>
+        <span class="stat-label">CTF Challenges Attempted</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Tools Comfortable With</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Simulated Security Projects</span>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">What I Can Do</p>
+      <h2>Where I can already add value</h2>
+      <div class="services-grid">
+        <div class="card">
+          <h3>Vulnerability Awareness</h3>
+          <p>Mapping findings to known frameworks like the OWASP Top 10 and explaining exactly why each one matters.</p>
+        </div>
+        <div class="card">
+          <h3>Basic Traffic Analysis</h3>
+          <p>Reading packet captures in Wireshark to spot what a connection is actually doing.</p>
+        </div>
+        <div class="card">
+          <h3>Security-Minded Thinking</h3>
+          <p>Spotting weak passwords, phishing red flags, and risky habits before they become real incidents.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUICK STATS / FOCUS AREAS ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">Current Focus</p>
+      <h2>What I'm working on</h2>
+      <div class="focus-grid">
+        <div class="card">
+          <h3>Ethical Hacking</h3>
+          <p>Learning offensive-security fundamentals through structured practice, not shortcuts.</p>
+        </div>
+        <div class="card">
+          <h3>Network Security</h3>
+          <p>Studying how traffic actually moves, so I can recognise when it shouldn't.</p>
+        </div>
+        <div class="card">
+          <h3>CTF Challenges</h3>
+          <p>Weekly practice on beginner-to-intermediate boxes to build real problem-solving reps.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROJECTS PREVIEW ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">Selected Work</p>
+      <h2>A few things I've built</h2>
+      <p style="margin-bottom: 32px;">
+        Three simulated security tools from this term — full write-ups, screenshots, and
+        the reasoning behind each one are on the <a href="projects.html" style="color: var(--accent-text); text-decoration: underline;">Projects page</a>.
+      </p>
+      <table class="preview-table">
+        <caption class="sr-only">Summary of featured projects</caption>
+        <thead>
+          <tr>
+            <th scope="col">Project</th>
+            <th scope="col">Focus Area</th>
+            <th scope="col">Risk Rating Shown</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>OWASP Top 10 Scanner Dashboard</td>
+            <td>Web Application Security</td>
+            <td><span class="severity-badge severity-critical">Critical</span></td>
+          </tr>
+          <tr>
+            <td>Password Entropy Analyzer</td>
+            <td>Authentication Security</td>
+            <td><span class="severity-badge severity-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Social Engineering Simulator</td>
+            <td>Human-Layer Security</td>
+            <td><span class="severity-badge severity-medium">Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

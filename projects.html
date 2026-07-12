@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Saheed Baseet Boluwatife</title>
+  <meta name="description" content="Security-focused projects by Saheed Baseet Boluwatife, including an OWASP Top 10 scanner dashboard, a password entropy analyzer, and a social engineering simulator." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <p class="eyebrow">Projects</p>
+      <h1>Simulated security tools, built this term</h1>
+      <p style="margin-top: 12px; max-width: 65ch;">
+        Each project below simulates a real security workflow the kind of tool a junior
+        analyst would actually reach for. Risk ratings reflect the severity level each tool
+        is designed to surface, not a claim about the build itself.
+      </p>
+    </section>
+
+    <!-- ============ FILTER BAR ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <div class="filter-bar" role="group" aria-label="Filter projects by focus area">
+        <button class="filter-btn is-active" data-filter="all" type="button">All</button>
+        <button class="filter-btn" data-filter="web" type="button">Web Application Security</button>
+        <button class="filter-btn" data-filter="auth" type="button">Authentication Security</button>
+        <button class="filter-btn" data-filter="human" type="button">Human-Layer Security</button>
+      </div>
+    </section> >
+    <section class="container reveal">
+      <div class="project-grid">
+
+        <!-- Project 1 -->
+        <article class="card project-card" data-category="web">
+          <div class="project-thumb" data-thumb>
+            <img data-thumb-img src="assets/img/project-owasp.jpg" alt="Screenshot of the OWASP Top 10 Vulnerability Scanner Dashboard interface" />
+            <div class="project-thumb-fallback" data-thumb-fallback hidden>Screenshot coming soon</div>
+            <span class="severity-badge severity-critical project-badge">Critical</span>
+          </div>
+          <h3>OWASP Top 10 Vulnerability Scanner Dashboard</h3>
+          <p>
+            An interactive dashboard simulating a security scan, mapping findings to the OWASP
+            Top 10 with severity ratings and remediation guidance for each result.
+          </p>
+          <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer" class="btn btn-outline project-link">
+            View on GitHub ↗
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card project-card" data-category="auth">
+          <div class="project-thumb" data-thumb>
+            <img data-thumb-img src="assets/img/project-entropy.jpg" alt="Screenshot of the Password Entropy and Breach-Pattern Analyzer interface" />
+            <div class="project-thumb-fallback" data-thumb-fallback hidden>Screenshot coming soon</div>
+            <span class="severity-badge severity-high project-badge">High</span>
+          </div>
+          <h3>Password Entropy &amp; Breach-Pattern Analyzer</h3>
+          <p>
+            Calculates real password entropy and flags common attacker patterns keyboard
+            walks, leetspeak substitutions explaining the exact weakness behind each flag.
+          </p>
+          <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer" class="btn btn-outline project-link">
+            View on GitHub ↗
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card project-card" data-category="human">
+          <div class="project-thumb" data-thumb>
+            <img data-thumb-img src="assets/img/project-socialeng.jpg" alt="Screenshot of the Social Engineering Attack Simulator interface" />
+            <div class="project-thumb-fallback" data-thumb-fallback hidden>Screenshot coming soon</div>
+            <span class="severity-badge severity-medium project-badge">Medium</span>
+          </div>
+          <h3>Social Engineering Attack Simulator</h3>
+          <p>
+            An interactive module testing users' ability to spot phishing, smishing, and
+            pretexting red flags across realistic scenarios, with a live detection score.
+          </p>
+          <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer" class="btn btn-outline project-link">
+            View on GitHub ↗
+          </a>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+  <script src="js/projects.js"></script>
+</body>
+</html>

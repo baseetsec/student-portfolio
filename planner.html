@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planner | Saheed Baseet Boluwatife</title>
+  <meta name="description" content="Interactive academic task planner for Saheed Baseet Boluwatife — add, complete, and delete tasks." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="planner.html" aria-current="page">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <p class="eyebrow">Academic Planner</p>
+      <h1>Mission / Task Log</h1>
+      <p style="margin-top: 12px; max-width: 60ch;">
+        Add a task, mark it complete when it's done, or remove it entirely. Everything saves
+        automatically in your browser, so the log is still here next time you visit.
+      </p>
+    </section>
+
+    <!-- ============ PROGRESS ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <div class="progress-panel">
+        <div class="progress-panel-header">
+          <span data-progress-label class="progress-label">Completion Status: 0%</span>
+          <span data-task-count class="progress-count">0 / 0 tasks complete</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Task completion status">
+          <div class="progress-fill" data-progress-bar></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ADD TASK ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <form class="task-form" data-task-form>
+        <label for="task-input" class="sr-only">New task description</label>
+        <input
+          type="text"
+          id="task-input"
+          data-task-input
+          placeholder="e.g. Finish OWASP scanner write-up"
+          autocomplete="off"
+          required
+        />
+        <button type="submit" class="btn btn-primary">Log Task</button>
+      </form>
+    </section>
+
+    <!-- ============ TASK LIST ============ -->
+    <section class="container reveal">
+      <div class="console-panel">
+        <div class="console-panel-header">
+          <span class="console-dot console-dot-red"></span>
+          <span class="console-dot console-dot-yellow"></span>
+          <span class="console-dot console-dot-green"></span>
+          <span class="console-title">task_log.sh</span>
+        </div>
+        <ul class="task-list" data-task-list></ul>
+        <p class="empty-state" data-empty-state>No tasks logged yet — add one above to get started.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+  <script src="js/planner.js"></script>
+</body>
+</html>
