@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Social Engineering Attack Simulator | Saheed Baseet Boluwatife</title>
+  <meta name="description" content="A live, working interactive phishing-detection quiz — a real demo of one of Saheed Baseet Boluwatife's security projects." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Primary">
+      <a href="index.html" class="nav-brand">baseet<span class="brand-dot">.</span>sec</a>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="planner.html">Planner</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="container reveal" style="padding-bottom: 0;">
+      <p class="eyebrow">Live Demo &middot; <a href="projects.html" style="color: var(--accent-text); text-decoration: underline;">Back to Projects</a></p>
+      <h1>Social Engineering Attack Simulator</h1>
+      <p style="margin-top: 12px; max-width: 65ch;">
+        You'll see one message at a time, across email, text, and phone-call transcripts.
+        Decide whether it's legitimate or phishing, then see the real reasoning behind
+        the answer. All scenarios are original and fictional — no real brands or people.
+      </p>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section class="container reveal">
+      <div class="console-panel">
+        <div class="console-panel-header">
+          <span class="console-dot console-dot-red"></span>
+          <span class="console-dot console-dot-yellow"></span>
+          <span class="console-dot console-dot-green"></span>
+          <span class="console-title">social_eng_sim.py</span>
+        </div>
+
+        <div class="analyzer-body">
+          <!-- Score / progress -->
+          <div class="progress-panel" style="padding: 16px 20px;">
+            <div class="progress-panel-header" style="margin-bottom: 10px;">
+              <span class="progress-label" data-score-label>Score: 0 / 8</span>
+            </div>
+            <div class="progress-track">
+              <div class="progress-fill" data-quiz-progress></div>
+            </div>
+          </div>
+
+          <!-- Scenario card -->
+          <div class="se-scenario" data-scenario-panel>
+            <div class="se-scenario-meta">
+              <span class="se-channel-badge" data-scenario-channel>Email</span>
+              <span class="se-from" data-scenario-from></span>
+            </div>
+            <h3 class="se-subject" data-scenario-subject hidden></h3>
+            <p class="se-body" data-scenario-body></p>
+
+            <div class="se-answer-row">
+              <button type="button" class="btn btn-outline" data-answer-legit>Looks Legit</button>
+              <button type="button" class="btn btn-primary" data-answer-phish>This Is Phishing</button>
+            </div>
+          </div>
+
+          <!-- Feedback -->
+          <div class="se-feedback" data-feedback-panel hidden>
+            <p class="se-verdict" data-feedback-verdict></p>
+            <p class="se-explain" data-feedback-explain></p>
+            <button type="button" class="btn btn-primary" data-next-button>Next Scenario →</button>
+          </div>
+
+          <!-- Results -->
+          <div class="se-results" data-results-panel hidden>
+            <h3 style="margin-bottom: 8px;">Quiz Complete</h3>
+            <p class="se-results-score" data-results-score></p>
+            <button type="button" class="btn btn-primary" data-restart-button>Try Again</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="container reveal">
+      <p class="eyebrow">How This Works</p>
+      <h2>The reasoning behind the tool</h2>
+      <p style="max-width: 65ch;">
+        Each scenario is drawn from a fixed set of eight original examples covering common
+        real-world attack patterns: lookalike domains, shortened-link smishing, pretexting
+        phone calls, business email compromise, and family-emergency scams, alongside
+        genuinely legitimate messages for contrast. The goal isn't to trick with obscure
+        edge cases, but to reinforce the small, concrete signals security professionals
+        actually look for first: sender domain mismatches, artificial urgency, and requests
+        for credentials or money that a legitimate sender would never make this way.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">&copy; 2026 Saheed Baseet Boluwatife. Built with HTML, CSS &amp; JavaScript.</p>
+      <div class="footer-links">
+        <button class="audio-toggle" data-audio-toggle type="button" aria-pressed="false">
+          <span class="bars"><span></span><span></span><span></span></span>
+          <span data-audio-label>Sound: off</span>
+        </button>
+        <a href="https://github.com/baseetsec" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="mailto:baseetboluwat@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <audio data-ambient-audio loop preload="none">
+    <source src="assets/audio/ambient-terminal.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="js/main.js"></script>
+  <script src="js/social-engineering.js"></script>
+</body>
+</html>

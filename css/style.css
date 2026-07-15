@@ -626,6 +626,23 @@ section {
     flex-direction: column;
   }
 }
+/* ---------- Social engineering quiz page ---------- */
+.se-scenario { background: var(--bg-elevated-hover); border: 1px solid var(--border); border-radius: var(--radius); padding: calc(var(--unit) * 3); }
+.se-scenario-meta { display: flex; align-items: center; gap: calc(var(--unit) * 1.5); margin-bottom: calc(var(--unit) * 1.5); flex-wrap: wrap; }
+.se-channel-badge { font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent-text); border: 1px solid var(--border-hover); border-radius: 4px; padding: calc(var(--unit) * 0.5) var(--unit); }
+.se-from { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); }
+.se-subject { font-size: 1.05rem; margin-bottom: calc(var(--unit) * 1.5); }
+.se-body { font-size: 0.95rem; line-height: 1.6; color: var(--text-primary); background: var(--bg-primary); border-left: 2px solid var(--border-hover); padding: calc(var(--unit) * 2); border-radius: 0 4px 4px 0; margin-bottom: calc(var(--unit) * 3); }
+.se-answer-row { display: flex; gap: calc(var(--unit) * 2); flex-wrap: wrap; }
+.se-feedback { background: var(--bg-elevated-hover); border: 1px solid var(--border); border-radius: var(--radius); padding: calc(var(--unit) * 3); }
+.se-verdict { font-family: var(--font-mono); font-size: 1rem; font-weight: 700; margin-bottom: calc(var(--unit) * 1.5); }
+.se-verdict-correct { color: #3fb950; }
+.se-verdict-incorrect { color: var(--severity-critical); }
+.se-explain { font-size: 0.92rem; margin-bottom: calc(var(--unit) * 3); }
+.se-results { text-align: center; background: var(--bg-elevated-hover); border: 1px solid var(--border); border-radius: var(--radius); padding: calc(var(--unit) * 5) calc(var(--unit) * 3); }
+.se-results-score { font-family: var(--font-mono); font-size: 1.1rem; color: var(--accent-text); margin-bottom: calc(var(--unit) * 3); }
+@media (max-width: 560px) { .se-answer-row { flex-direction: column; } .se-answer-row button { width: 100%; justify-content: center; } }
+
 /* ---------- OWASP scanner page ---------- */
 .scan-status {
   display: flex;
